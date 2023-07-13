@@ -1,5 +1,5 @@
-from flask import render_template, request, Blueprint
-from .forms import CEPForm, IPForm
+from flask import render_template, Blueprint
+from forms import CEPForm, IPForm
 import requests
 
 main_blueprint = Blueprint('main', __name__)
@@ -27,5 +27,5 @@ def busca():
       data = response.json()
       return render_template('ip_result.html', data=data)
 
-  return render_template('busca.html', cep_form=cep_form)
+  return render_template('busca.html', cep_form=cep_form, ip_form=ip_form)
     
