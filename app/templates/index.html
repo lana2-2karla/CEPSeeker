@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Seeker - Buscador de CEP e IP</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
@@ -14,23 +15,27 @@
             </ul>
             <div id="tab-cep">
                 <h2>Busca por CEP</h2>
-                <form id="cep-form">
+                <form id="cep-form" class="search-form" method="POST" action="{{ url_for('main.busca') }}">
+                    {{ cep_form.hidden_tag() }}
                     <div class="form-group">
-                        <label for="cep">CEP</label>
-                        <input type="text" id="cep" class="form-control">
+                        <label for="cep">CEP:</label>
+                        {{ cep_form.cep(class_="form-control", placeholder="Digite o CEP") }}
                     </div>
                     <button type="submit" class="btn btn-primary">Buscar</button>
                 </form>
+                <div id="cep-result-container"></div>
             </div>
             <div id="tab-ip">
                 <h2>Busca por IP</h2>
-                <form id="ip-form">
+                <form id="ip-form" class="search-form" method="POST" action="{{ url_for('main.busca') }}">
+                    {{ ip_form.hidden_tag() }}
                     <div class="form-group">
-                        <label for="ip">IP</label>
-                        <input type="text" id="ip" class="form-control">
+                        <label for="ip">IP:</label>
+                        {{ ip_form.ip(class_="form-control", placeholder="Digite o IP") }}
                     </div>
                     <button type="submit" class="btn btn-primary">Buscar</button>
                 </form>
+                <div id="ip-result-container"></div>
             </div>
         </div>
     </div>
