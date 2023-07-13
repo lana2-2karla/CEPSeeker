@@ -6,7 +6,9 @@ main_blueprint = Blueprint('main', __name__)
 
 @main_blueprint.route('/')
 def index():
-  return render_template('index.html')
+  cep_form = CEPForm()
+  ip_form = IPForm()
+  return render_template('index.html', cep_form=cep_form, ip_form=ip_form)
 
 @main_blueprint.route('/busca', methods=['GET', 'POST'])
 def busca():
