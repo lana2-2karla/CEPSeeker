@@ -4,6 +4,35 @@
   <title>Seeker - Buscador de CEP e IP</title>
 </head>
 <body>
-   <div>Hello World</div>
+  <div class="container">
+    <h1>Seeker - Buscador de CEP e IP</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tab-cep">Buscar CEP</a></li>
+        <li><a href="#tab-ip">Buscar IP</a></li>
+      </ul>
+      <div id="tab-cep">
+        <h2>Busca por CEP</h2>
+        <form id="cep-form">
+          <div class="form-group">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" class="form-control">
+          </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+      </div>
+      <div id="tab-ip">
+        <h2>Busca por IP</h2>
+        <form id="ip-form">
+          <div class="form-group">
+            <label for="ip">IP</label>
+            <input type="text" id="ip" class="form-control">
+          </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
